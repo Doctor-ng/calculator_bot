@@ -20,8 +20,8 @@ from telegram.ext import (
 )
 
 # ================= CONFIG =================
-BOT_TOKEN = "8558150692:AAHoYgdu8RtogjeB50wYIUDT3kj5ePIPpac"
-ADMIN_ID = 5182907633
+BOT_TOKEN = "8558150692:AAHoYgdu8RtogjeB50wYnwfe83h4fn3IPpac" #Set Your Bot Token
+ADMIN_ID = 5182907633 #Set Your Telegram ID
 
 
 # ================= GROUP TRACK =================
