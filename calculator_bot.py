@@ -1,10 +1,13 @@
+# A Telegram bot that serves as a calculator for both mathematical expressions and cryptocurrency prices. It also includes features for setting price alerts and an admin panel for broadcasting messages to all users.
+# By @DoctorEX0
 # ================= IMPORTS =================
 import sqlite3
 
+from config import BOT_TOKEN, ADMIN_ID # type: ignore
 from handlers.start import start, help_command # type: ignore
 from handlers.calculator import calculate # type: ignore
 from handlers.price import price_command, price_callbacks # type: ignore
-from handlers.alerts import alert_command, myalerts, alert_callbacks, delete_alert_handler # type: ignore
+from handlers.alerts import alert_command, myalerts, alert_callbacks# type: ignore
 from handlers.inline import inline_query # type: ignore
 from admin.admin import admin, admin_callbacks, handle_broadcast, cancel_broadcast # type: ignore
 
@@ -19,11 +22,14 @@ from telegram.ext import (
     filters,
 )
 
+<<<<<<< HEAD
 # ================= CONFIG =================
 BOT_TOKEN = "8558150692:AAHoYgdu8RtogjeB50wYnwfe83h4fn3IPpac" #Set Your Bot Token
 ADMIN_ID = 5182907633 #Set Your Telegram ID
 
 
+=======
+>>>>>>> 864bc94 (update)
 # ================= GROUP TRACK =================
 import sqlite3
 
