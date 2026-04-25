@@ -22,14 +22,6 @@ from telegram.ext import (
     filters,
 )
 
-<<<<<<< HEAD
-# ================= CONFIG =================
-BOT_TOKEN = "8558150692:AAHoYgdu8RtogjeB50wYnwfe83h4fn3IPpac" #Set Your Bot Token
-ADMIN_ID = 5182907633 #Set Your Telegram ID
-
-
-=======
->>>>>>> 864bc94 (update)
 # ================= GROUP TRACK =================
 import sqlite3
 
