@@ -8,57 +8,19 @@ A powerful Telegram bot that supports:
 - 📈 Charts (TradingView)
 - 🔔 Price alerts
 - 📢 Admin broadcast system
-
-
-🚀 Features
-
-🧮 Math
-
-- "2+2"
-- "(5*6)/2"
-- "2²", "3³"
-
-📊 Percentage
-
-- "25% of 500"
-- "25 is % of 500"
-- "500 ↑ 10%"
-- "500 ↓ 10%"
-
-🪙 Crypto
-
-- "1 btc"
-- "2 eth"
-- "/p btc" → full details
-
-📈 Charts
-
-- TradingView chart button
-- Supports almost all coins
-
-🔔 Alerts
-
-- "/alert btc 70000"
-- "/myalerts"
-
-📢 Admin
-
-- Broadcast to users/groups
-- Restart bot
-
----
+_________________________________
 
 📦 Requirements
 
 - Python 3.10+
 - VPS (Ubuntu recommended)
 - Telegram Bot Token
+______________________________
 
 Install dependencies:
 
 pip install -r requirements.txt
-
----
+__________________________________________
 
 ⚙️ Configuration
 
@@ -77,7 +39,7 @@ CHANNEL_LINKS = [
 ▶️ Run Bot
 
 python main.py
-
+_______________________
 
 ⚙️ Run with systemd (Auto start)
 
