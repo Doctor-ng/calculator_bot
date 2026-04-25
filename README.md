@@ -36,7 +36,7 @@ DB_FILE = "bot.db"
 CACHE_TTL = 60
 
 CHANNEL_LINKS = [
-    "https://t.me/your_channel"
+    "https://t.me/Doc_Tools"
 ]
 
 ▶️ Run Bot
