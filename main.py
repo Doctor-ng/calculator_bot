@@ -9,7 +9,8 @@ from handlers.calculator import calculate # type: ignore
 from handlers.price import price_command, price_callbacks # type: ignore
 from handlers.alerts import alert_command, myalerts, alert_callbacks# type: ignore
 from handlers.inline import inline_query # type: ignore
-from admin.admin import admin, admin_callbacks, handle_broadcast, cancel_broadcast # type: ignore
+from admin.admin import register_admin # type: ignore
+from admin.broadcast import register_broadcast # type: ignore
 
 
 from telegram import Update
@@ -20,6 +21,7 @@ from telegram.ext import (
     MessageHandler,
     CallbackQueryHandler,
     filters,
+    InlineQueryHandler,
 )
 
 # ================= GROUP TRACK =================
@@ -55,30 +57,19 @@ def main():
     app.add_handler(CommandHandler("alert", alert_command))
     app.add_handler(CommandHandler("myalerts", myalerts))
     
-    from telegram.ext import InlineQueryHandler
+    # ================= INLINE ===========================
     app.add_handler(InlineQueryHandler(inline_query))
-    app.add_handler(CallbackQueryHandler(price_callbacks))
-
+    
     # ================= CALLBACK HANDLERS =================
     app.add_handler(CallbackQueryHandler(
         price_callbacks,
         pattern="^(refresh:|close$)"
-    ))
-
-    app.add_handler(CallbackQueryHandler(
-        admin_callbacks,
-        pattern="^(bc_|restart_|close$)"
     ))
     
     app.add_handler(CallbackQueryHandler(
     alert_callbacks,
     pattern="^(delete_alert$)"
     ))
-    
-    # ================= ADMIN =================
-    app.add_handler(CommandHandler("admin", admin))
-    app.add_handler(CommandHandler("cancel", cancel_broadcast))
-    app.add_handler(CallbackQueryHandler(admin_callbacks, pattern="^(bc_|restart_|admin_|close)"))
 
     # ================= GROUP TRACK =================
     app.add_handler(
@@ -92,15 +83,10 @@ def main():
         MessageHandler(filters.TEXT & ~filters.COMMAND, calculate),
         group=0
     )
-
-    # 🔥 PRIORITY 1 → Broadcast (admin only)
-    app.add_handler(
-        MessageHandler(
-            filters.TEXT & filters.User(ADMIN_ID) & ~filters.COMMAND,
-            handle_broadcast
-        ),
-        group=1
-    )
+    
+    # ================= ADMIN + BROADCAST =================
+    register_admin(app)
+    register_broadcast(app)
 
     # ================= RUN =================
     app.run_polling(drop_pending_updates=True)

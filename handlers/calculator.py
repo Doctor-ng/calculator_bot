@@ -9,8 +9,21 @@ async def calculate(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
     if not update.message or not update.message.text:
         return
+    
+    text = update.message.text.lower().strip()
+    words = text.split()
+    
+    if "prag" in text:
+       await update.message.reply_text("Chutiya hai bhai!")
+       return
 
-    text = update.message.text.strip()
+    if "1 bmw" in text:
+       await update.message.reply_text("1.5$ /Per Night 💦")
+       return
+
+    if "price" in text:
+       await update.message.reply_text("Use /p btc")
+       return
 
     # -------- CRYPTO FIRST --------
     hit = await handle_crypto(update, context, text)
