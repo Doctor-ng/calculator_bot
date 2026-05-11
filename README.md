@@ -1,4 +1,4 @@
-🤖 Crypto Calculator Telegram Bot 
+🤖 Crypto Calculator Telegram Bot
 
 A powerful Telegram bot that supports:
 
@@ -8,6 +8,7 @@ A powerful Telegram bot that supports:
 - 📈 Charts (TradingView)
 - 🔔 Price alerts
 - 🔍 Inline Search Mode
+- 🏆 Calculation leaderboard
 - 📢 Admin broadcast system
 _________________________________
 https://t.me/KaIcuIator_Bot
@@ -38,6 +39,10 @@ CACHE_TTL = 60
 CHANNEL_LINKS = [
     "https://t.me/Doc_Tools"
 ]
+
+🏆 Leaderboard
+
+Use `/leaderboard` or `/lb` to show the top users by successful math and crypto calculations.
 
 ▶️ Run Bot
 

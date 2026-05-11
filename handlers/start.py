@@ -22,7 +22,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         conn.commit()
         conn.close()
-        
+
     keyboard = [
         [
             InlineKeyboardButton("🔍 Inline Calculator", switch_inline_query_current_chat=""),
@@ -63,6 +63,9 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "<b>Alerts 🔔</b>\n"
         "<code>/alert btc 70000</code> <b>[Set Alert]</b>\n"
         "<code>/myalerts</code> <b>[View Alerts]</b>\n\n"
+        "<b>Leaderboard 🏆</b>\n"
+        "<code>/leaderboard</code> <b>[Top math + crypto users]</b>\n"
+        "<code>/lb</code> <b>[Short leaderboard command]</b>\n\n"
         "<b>⚙️ Developer</b> <a href='https://t.me/DoctorEX0'>DoctorEX0</a>",
         parse_mode="HTML",
     )

@@ -2,6 +2,7 @@ from telegram import Update
 from telegram.ext import ContextTypes
 
 from services.crypto_logic import process_single_crypto # type: ignore
+from services.leaderboard import record_calculation # type: ignore
 
 
 async def handle_crypto(update: Update, context: ContextTypes.DEFAULT_TYPE, text: str):
@@ -9,6 +10,8 @@ async def handle_crypto(update: Update, context: ContextTypes.DEFAULT_TYPE, text
 
     if not res:
         return False
+
+    record_calculation(update.effective_user, "crypto")
 
     await update.message.reply_text(
         f"<b>{res['amount']} {res['symbol']} ({res['name']})</b>\n\n"
